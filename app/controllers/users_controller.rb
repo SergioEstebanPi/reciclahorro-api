@@ -10,9 +10,12 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
-
-    render json: @users
+    if current.rol
+      @users = User.all
+      render json: @users
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /users/1
