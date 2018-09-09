@@ -35,3 +35,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# agrego gemas necesarias para usar el API
+# Esta gema nos permite habilitar "has_secure_password" en Active Record
+gem 'bcrypt', '~> 3.1.7'
+# Usamos Rack CORS para habiliar Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors'
+# Usamos knock para autenticar con el JWT
+gem 'knock'
+# Usamos Active Model Serializers para definir las respuestas del API en JSON
+gem 'active_model_serializers', '~> 0.10.0'
