@@ -55,6 +55,6 @@ class UsersController < ApplicationController
     # pasword_digest => password, password_confirmation
     def user_params
       #params.require(:user).permit(:name, :email, :password_digest)
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :documento, :rol, :direccion, :fecha_nacimiento)
     end
 end

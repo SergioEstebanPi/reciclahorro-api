@@ -16,6 +16,10 @@ ActiveRecord::Schema.define(version: 20180909144534) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "documento"
+    t.decimal "rol"
+    t.string "direccion"
+    t.date "fecha_nacimiento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
