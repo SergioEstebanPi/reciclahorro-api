@@ -1,0 +1,2 @@
+class Residuo < ApplicationRecord
+end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  solicitud: one
+  user: one
+  peso: 
+  estadoresiduo: 
+  oferta: one
+
+two:
+  user: two
+  solicitud: two
+  user: two
+  peso: 
+  estadoresiduo: 
+  oferta: two
