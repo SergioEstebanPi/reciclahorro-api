@@ -1,4 +1,5 @@
 class AlmacenesController < ApplicationController
+  before_action :authenticate_user, only: [:show, :update]
   before_action :set_almacen, only: [:show, :update, :destroy]
 
   # GET /almacenes

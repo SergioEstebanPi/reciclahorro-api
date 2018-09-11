@@ -1,9 +1,11 @@
 class SolicitudesController < ApplicationController
   before_action :set_solicitud, only: [:show, :update, :destroy]
+  before_action :authenticate_user
 
   # GET /solicitudes
   def index
-    @solicitudes = Solicitud.all
+    #@solicitudes = Solicitud.all
+    @solicitudes = Solicitud.where(:user, current_user)
 
     render json: @solicitudes
   end
@@ -16,6 +18,8 @@ class SolicitudesController < ApplicationController
   # POST /solicitudes
   def create
     @solicitud = Solicitud.new(solicitud_params)
+    @solicitud.user = current_user
+    @solicitud.oferta = Oferta.find(params[:oferta][:id])
 
     if @solicitud.save
       render json: @solicitud, status: :created, location: @solicitud

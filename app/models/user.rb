@@ -17,6 +17,9 @@ class User < ApplicationRecord
         presence: true,
         length: { minimum: 6 },
         allow_nil: true
+
+    has_many :vecino_entrega, :class_name => 'Entrega', :foreign_key => 'vecino_id'
+    has_many :recolector_entrega, :class_name => 'Entrega', :foreign_key => 'recolector_id'
     
     private
         # se encarga de que el email solo tenga letras minúsculas

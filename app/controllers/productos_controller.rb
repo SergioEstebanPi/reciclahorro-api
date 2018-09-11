@@ -1,5 +1,6 @@
 class ProductosController < ApplicationController
   before_action :set_producto, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
 
   # GET /productos
   def index
@@ -15,12 +16,15 @@ class ProductosController < ApplicationController
 
   # POST /productos
   def create
-    @producto = Producto.new(producto_params)
-
-    if @producto.save
-      render json: @producto, status: :created, location: @producto
+    if current_user.rol == 2
+      @producto = Producto.new(producto_params)
+      if @producto.save
+        render json: @producto, status: :created, location: @producto
+      else
+        render json: @producto.errors, status: :unprocessable_entity
+      end
     else
-      render json: @producto.errors, status: :unprocessable_entity
+      render json: {producto: ["No permitido para este rol de usuario"]}, status:401
     end
   end
 

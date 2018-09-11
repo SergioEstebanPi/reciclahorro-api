@@ -1,5 +1,6 @@
 class DescuentosController < ApplicationController
   before_action :set_descuento, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:create, :update, :destroy]
 
   # GET /descuentos
   def index
@@ -15,12 +16,17 @@ class DescuentosController < ApplicationController
 
   # POST /descuentos
   def create
-    @descuento = Descuento.new(descuento_params)
-
-    if @descuento.save
-      render json: @descuento, status: :created, location: @descuento
+    if current_user.rol == 2
+      @descuento = Descuento.new(descuento_params)
+      @descuento.almacen = Almacen.find(params[:almacen][:id])
+      
+      if @descuento.save
+        render json: @descuento, status: :created, location: @descuento
+      else
+        render json: @descuento.errors, status: :unprocessable_entity
+      end
     else
-      render json: @descuento.errors, status: :unprocessable_entity
+      render json: {producto: ["No permitido para este rol de usuario"]}, status:401
     end
   end
 
