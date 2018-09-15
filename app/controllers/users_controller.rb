@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # solicitamos autenticación a la accion show
-  before_action :authenticate_user, only: [:show, :update, :destroy]
+  before_action :authenticate_user, only: [:index, :show, :update, :destroy]
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users/current
