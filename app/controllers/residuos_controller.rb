@@ -46,6 +46,6 @@ class ResiduosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def residuo_params
-      params.require(:residuo).permit(:nombre, :descripcion, :tratamiento)
+      params.require(:residuo).permit(:nombre, :descripcion, :imagen, :tratamiento)
     end
 end

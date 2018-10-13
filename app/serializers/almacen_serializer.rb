@@ -1,4 +1,4 @@
 class AlmacenSerializer < ActiveModel::Serializer
-  attributes :id, :nombre, :nit, :tipo, :direccion
+  attributes :id, :nombre, :nit, :imagen, :tipo, :direccion
   has_one :user
 end

@@ -13,6 +13,7 @@
                 password: "123456",
                 rol: 1,
                 documento: "1234",
+                foto: "img/#{x}.jpg",
                 direccion: "cll 123 cra 123",
                 fecha_nacimiento: "01/01/1990"
             }
@@ -24,6 +25,7 @@ end
             {
                 user_id: "#{x}",
                 nombre: "Almacen#{x}",
+                imagen: "img/#{x}.jpg",
                 nit: "#{x}",
                 tipo: 1,
                 direccion: "cll 123 cra 123",
@@ -46,7 +48,8 @@ end
     Producto.create(
             {
                 nombre: "Producto#{x}",
-                descripcion: "descripcion del Producto#{x}"
+                descripcion: "descripcion del Producto#{x}",
+                imagen: "img/#{x}.jpg"
             }
     )
 end
@@ -56,6 +59,7 @@ end
             {
                 nombre: "Residuo#{x}",
                 descripcion: "descripcion del Residuo#{x}",
+                imagen: "img/#{x}.jpg",
                 tratamiento: "tratamiento del Residuo#{x}"
             }
     )
@@ -70,6 +74,24 @@ end
             producto_id: "#{x}",
             titulo: "Oferta#{x}",
             descripcion: "descripcion del Oferta#{x}",
+            imagen: "img/103375_91919_1.jpg",
+            fecha_inicio: "01/01/1990",
+            fecha_fin: nil,
+            estado: 1
+        }
+    )
+end
+
+11.upto(20) do |x|
+    Oferta.create(
+        {
+            almacen_id: "#{x}",
+            descuento_id: "#{x}",
+            residuo_id: "#{x}",
+            producto_id: "#{x}",
+            titulo: "Oferta#{x}",
+            descripcion: "descripcion del Oferta#{x}",
+            imagen: "img/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg",
             fecha_inicio: "01/01/1990",
             fecha_fin: nil,
             estado: 1

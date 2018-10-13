@@ -55,6 +55,6 @@ class OfertasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def oferta_params
-      params.require(:oferta).permit(:almacen_id, :descuento_id, :residuo_id, :producto_id, :fecha_inicio, :fecha_fin, :estado)
+      params.require(:oferta).permit(:almacen_id, :descuento_id, :residuo_id, :producto_id, :titulo, :descripcion, :imagen, :fecha_inicio, :fecha_fin, :estado)
     end
 end

@@ -47,6 +47,6 @@ class AlmacenesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def almacen_params
-      params.require(:almacen).permit(:nombre, :nit, :user_id, :tipo, :direccion)
+      params.require(:almacen).permit(:nombre, :nit, :user_id, :imagen, :tipo, :direccion)
     end
 end
