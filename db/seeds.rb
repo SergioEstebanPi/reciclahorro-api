@@ -13,7 +13,7 @@
                 password: "123456",
                 rol: 1,
                 documento: "1234",
-                foto: "img/user-4.png",
+                foto: "default/avatar.png",
                 direccion: "cll 123 cra 123",
                 fecha_nacimiento: "01/01/1990"
             }
@@ -25,7 +25,7 @@ end
             {
                 user_id: "#{x}",
                 nombre: "Almacen#{x}",
-                imagen: "img/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png",
                 nit: "#{x}",
                 tipo: 1,
                 direccion: "cll 123 cra 123",
@@ -44,22 +44,29 @@ end
     )
 end
 
-1.upto(10) do |x|
-    Producto.create(
-            {
-                nombre: "Producto#{x}",
-                descripcion: "descripcion del Producto#{x}",
-                imagen: "img/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg"
-            }
-    )
-end
+Producto.create(
+        {
+            nombre: "Producto",
+            descripcion: "descripcion del Producto",
+            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+        }
+)
+
+Producto.create(
+        {
+            nombre: "Productos de aso",
+            descripcion: "descripcion del Producto",
+            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+        }
+)
+
 
 1.upto(10) do |x|
     Residuo.create(
             {
                 nombre: "Residuo#{x}",
                 descripcion: "descripcion del Residuo#{x}",
-                imagen: "img/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png",
                 tratamiento: "tratamiento del Residuo#{x}"
             }
     )
@@ -74,13 +81,28 @@ end
             producto_id: "#{x}",
             titulo: "Oferta#{x}",
             descripcion: "descripcion del Oferta#{x}",
-            imagen: "img/103375_91919_1.jpg",
+            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png",
             fecha_inicio: "01/01/1990",
             fecha_fin: nil,
             estado: 1
         }
     )
 end
+
+Oferta.create(
+        {
+            almacen_id: "1",
+            descuento_id: "1",
+            residuo_id: "1",
+            producto_id: "1",
+            titulo: "Celular MOTOROLA Moto G5 DS Gris",
+            descripcion: "Precio normal: $699.900 Ahora: $399.900",
+            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png",
+            fecha_inicio: "01/11/2018",
+            fecha_fin: "01/11/2018",
+            estado: 1
+        }
+    )
 
 11.upto(20) do |x|
     Oferta.create(
@@ -91,7 +113,7 @@ end
             producto_id: "#{x}",
             titulo: "Oferta#{x}",
             descripcion: "descripcion del Oferta#{x}",
-            imagen: "img/vb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg",
+            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png",
             fecha_inicio: "01/01/1990",
             fecha_fin: nil,
             estado: 1
@@ -148,7 +170,8 @@ Producto.create(
                 Limpieza Superior y Cuidado de las prendas con 6MotionDD™ 
                 Durabilidad, Ahorro y confianza con Motor Inverter Direct Drive 
                 Dos Lavadoras en un Solo Cuerpo LG 
-                TWINWash"
+                TWINWash",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -158,7 +181,8 @@ Producto.create(
                 descripcion: "Incluye vaporera interna 
                 Cuerpo de aluminio de gran durabilidad 
                 Peso 1.6 kg 
-                Dimensiones 33.5 x 25 x 20.5 cm"
+                Dimensiones 33.5 x 25 x 20.5 cm",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -169,7 +193,8 @@ Producto.create(
                 Niveles de Cocción: 10 
                 Número Programas: 6 
                 Función de Inicio Rápido: Sí 
-                Potencia de Cocción: 110V"
+                Potencia de Cocción: 110V",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -179,7 +204,8 @@ Producto.create(
                 descripcion: "Potencia: 1100 watts 
                 Led indicador de temperatura S
                 uela antiadherente con 56 salidas de vapor 
-                Dimensiones 29.5 x 12.5 x 14 cm"
+                Dimensiones 29.5 x 12.5 x 14 cm",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -189,7 +215,8 @@ Producto.create(
                 descripcion: "Potencia: 1000 watts 
                 Peso 1.9 kg 
                 Regulador de temperatura 
-                Dimensiones 34 x 13.5 x 29 cm"
+                Dimensiones 34 x 13.5 x 29 cm",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -200,7 +227,8 @@ Producto.create(
                 Recipiente removible 
                 Capacidad 1,0 Litros 
                 Sensor de temperatura 
-                Incluye taza medidora"
+                Incluye taza medidora",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -210,7 +238,8 @@ Producto.create(
                 descripcion: "Potencia: 400 watts 
                 Capacidad: 900 ml 
                 Partes desmontables 
-                Base antideslizante"
+                Base antideslizante",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -221,7 +250,8 @@ Producto.create(
                 Filtro removible 
                 Capacidad 10 tasas 
                 Sensor de temperatura 
-                Incluye cuchara dosificadora"
+                Incluye cuchara dosificadora",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -234,7 +264,8 @@ Producto.create(
                 Procesador 2.3GHz, 1.6GHz 
                 Memoria interna 32GB 
                 RAM 4 GB 
-                Bateria 3600 mAh"
+                Bateria 3600 mAh",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -247,7 +278,8 @@ Producto.create(
                 Smart TV 
                 HDMI: 3 
                 USB: 2 
-                Sí TDT"
+                Sí TDT",
+                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -439,16 +471,3 @@ Residuo.create(
             }
     )
     
-Oferta.create(
-        {
-            almacen_id: "1",
-            descuento_id: "1",
-            residuo_id: "1",
-            producto_id: "1",
-            titulo: "Celular MOTOROLA Moto G5 DS Gris",
-            descripcion: "Precio normal: $699.900 Ahora: $399.900",
-            fecha_inicio: "01/11/2018",
-            fecha_fin: "01/11/2018",
-            estado: 1
-        }
-    )

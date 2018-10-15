@@ -8,6 +8,12 @@ class UsersController < ApplicationController
     render json: current_user
   end
 
+  # GET /logout
+  def logout
+    current_user = nil
+    reset_session
+  end
+
   # GET /users
   def index
     if current.rol
@@ -26,6 +32,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     @user = User.new(user_params)
+    @user.foto = "default/avatar.png";
 
     if @user.save
       render json: @user, status: :created, location: @user

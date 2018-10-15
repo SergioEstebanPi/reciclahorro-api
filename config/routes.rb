@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/users/current' => 'users#current'
   # /users/:user_id/entregas
   resources :users
+  post 'logout' => 'users#logout'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

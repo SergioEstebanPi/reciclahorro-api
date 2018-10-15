@@ -47,3 +47,5 @@ gem 'knock'
 gem 'active_model_serializers', '~> 0.10.0'
 # postgresql
 gem 'pg'
+#Media file upload
+gem 'activestorage'
