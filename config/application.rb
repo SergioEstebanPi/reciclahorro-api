@@ -9,9 +9,10 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
-# require "sprockets/railtie"
+require "sprockets/railtie"
 require "rails/test_unit/railtie"
-require "active_storage"
+#require "active_storage"
+require "active_storage/engine"
 require 'base64'
 
 # Require the gems listed in Gemfile, including any gems

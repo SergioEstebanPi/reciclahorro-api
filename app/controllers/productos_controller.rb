@@ -18,19 +18,22 @@ class ProductosController < ApplicationController
 
   # GET /productos/1
   def show
-    # sputs '=------------------------------'
-    #puts my_url
+    #puts '=------------------------------////////////////////////////////////'
+    #puts @producto.avatar
     render json: @producto
   end
 
   # POST /productos
   def create
     #if @permitido
-      @producto = Producto.new(new_producto_params)
-      guardar_imagen(@producto.nombre)
-      puts 'Producto'
-      puts @producto
+      @producto = Producto.new(producto_params)
+      #@producto.avatar.attach(params[:avatar])
+      #puts 'Producto'
+      #puts url_for(@producto.avatar)
       if @producto.save
+        if producto_params[:dataimagen]
+          guardar_imagen(@producto.id)
+        end
         render json: @producto, status: :created, location: @producto
       else
         render json: @producto.errors, status: :unprocessable_entity
@@ -42,8 +45,8 @@ class ProductosController < ApplicationController
 
   # PATCH/PUT /productos/1
   def update
-    guardar_imagen(producto_params[:nombre])
-    if @producto.update(producto_params)
+    guardar_imagen(@producto.id)
+    if @producto.update(update_producto_params)
       render json: @producto
     else
       render json: @producto.errors, status: :unprocessable_entity
@@ -61,12 +64,11 @@ class ProductosController < ApplicationController
       @producto = Producto.find(params[:id])
     end
 
-    def new_producto_params
-      params.require(:producto).permit(:nombre, :descripcion, :imagen, :dataimagen)
-    end
-
     # Only allow a trusted parameter "white list" through.
     def producto_params
+      params.require(:producto).permit(:nombre, :descripcion, :imagen, :dataimagen)
+    end
+    def update_producto_params
       params.require(:producto).permit(:nombre, :descripcion, :dataimagen)
     end
     def set_logic
@@ -82,10 +84,10 @@ class ProductosController < ApplicationController
         render json: {producto: ["No permitido para este rol de usuario"]}, status:401
       end
     end
-    def guardar_imagen(nombre)
+    def guardar_imagen(id)
       @dataimagen = params[:dataimagen]
       if @dataimagen
-        @subcarpetaimagen = current_user.email + '/productos/' + nombre + '/'
+        @subcarpetaimagen = current_user.email + '/productos/' + id.to_s + '/'
         @carpetaimagen = 'public/' + @subcarpetaimagen
         @rutaimagen = @subcarpetaimagen + params[:imagen]
         FileUtils.mkdir_p(@carpetaimagen) unless File.exist?(@carpetaimagen) 
