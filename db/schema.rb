@@ -106,7 +106,10 @@ ActiveRecord::Schema.define(version: 2018_10_16_004437) do
   create_table "productos", force: :cascade do |t|
     t.string "nombre"
     t.text "descripcion"
-    t.text "imagen"
+    t.string "imagen_file_name"
+    t.string "imagen_content_type"
+    t.integer "imagen_file_size"
+    t.datetime "imagen_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

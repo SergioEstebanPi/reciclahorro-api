@@ -30,10 +30,19 @@ class ProductosController < ApplicationController
       #@producto.avatar.attach(params[:avatar])
       #puts 'Producto'
       #puts url_for(@producto.avatar)
+      #puts 'imagen en base64'
+      #puts producto_params[:dataimagen]
+      # puts @producto.nombre
+      # puts @producto.descripcion
+      puts producto_params
+      @producto.imagen = params[:imagen]
       if @producto.save
-        if producto_params[:dataimagen]
-          guardar_imagen(@producto.id)
-        end
+        # puts '////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////'
+        # if false#@producto.dataimagen
+        #   puts 'esta es la image'
+        #   puts producto_params[:dataimagen]
+        #   #guardar_imagen(@producto.id)
+        # end
         render json: @producto, status: :created, location: @producto
       else
         render json: @producto.errors, status: :unprocessable_entity
@@ -66,7 +75,7 @@ class ProductosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def producto_params
-      params.require(:producto).permit(:nombre, :descripcion, :imagen, :dataimagen)
+      params.require(:producto).permit(:nombre, :descripcion, :imagen)
     end
     def update_producto_params
       params.require(:producto).permit(:nombre, :descripcion, :dataimagen)
@@ -85,6 +94,7 @@ class ProductosController < ApplicationController
       end
     end
     def guardar_imagen(id)
+      puts 'guardar_imagen'
       @dataimagen = params[:dataimagen]
       if @dataimagen
         @subcarpetaimagen = current_user.email + '/productos/' + id.to_s + '/'
@@ -93,7 +103,7 @@ class ProductosController < ApplicationController
         FileUtils.mkdir_p(@carpetaimagen) unless File.exist?(@carpetaimagen) 
         File.open(@carpetaimagen + params[:imagen],'wb') do |file|
           file.write(Base64.decode64(@dataimagen))
-          @producto.imagen = @rutaimagen
+          @producto.imagen = "https://localhost:3000/" + @rutaimagen
           puts 'ruta imagen'
           puts @producto.imagen
         end

@@ -47,16 +47,16 @@ end
 Producto.create(
         {
             nombre: "Producto",
-            descripcion: "descripcion del Producto",
-            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+            descripcion: "descripcion del Producto"#,
+            #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
         }
 )
 
 Producto.create(
         {
             nombre: "Productos de aso",
-            descripcion: "descripcion del Producto",
-            imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+            descripcion: "descripcion del Producto"#,
+            #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
         }
 )
 
@@ -170,8 +170,8 @@ Producto.create(
                 Limpieza Superior y Cuidado de las prendas con 6MotionDD™ 
                 Durabilidad, Ahorro y confianza con Motor Inverter Direct Drive 
                 Dos Lavadoras en un Solo Cuerpo LG 
-                TWINWash",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                TWINWash"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -181,8 +181,8 @@ Producto.create(
                 descripcion: "Incluye vaporera interna 
                 Cuerpo de aluminio de gran durabilidad 
                 Peso 1.6 kg 
-                Dimensiones 33.5 x 25 x 20.5 cm",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Dimensiones 33.5 x 25 x 20.5 cm"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -193,8 +193,8 @@ Producto.create(
                 Niveles de Cocción: 10 
                 Número Programas: 6 
                 Función de Inicio Rápido: Sí 
-                Potencia de Cocción: 110V",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Potencia de Cocción: 110V"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -204,8 +204,8 @@ Producto.create(
                 descripcion: "Potencia: 1100 watts 
                 Led indicador de temperatura S
                 uela antiadherente con 56 salidas de vapor 
-                Dimensiones 29.5 x 12.5 x 14 cm",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Dimensiones 29.5 x 12.5 x 14 cm"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -215,8 +215,8 @@ Producto.create(
                 descripcion: "Potencia: 1000 watts 
                 Peso 1.9 kg 
                 Regulador de temperatura 
-                Dimensiones 34 x 13.5 x 29 cm",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Dimensiones 34 x 13.5 x 29 cm"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -227,8 +227,8 @@ Producto.create(
                 Recipiente removible 
                 Capacidad 1,0 Litros 
                 Sensor de temperatura 
-                Incluye taza medidora",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Incluye taza medidora"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -238,8 +238,8 @@ Producto.create(
                 descripcion: "Potencia: 400 watts 
                 Capacidad: 900 ml 
                 Partes desmontables 
-                Base antideslizante",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Base antideslizante"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -250,8 +250,8 @@ Producto.create(
                 Filtro removible 
                 Capacidad 10 tasas 
                 Sensor de temperatura 
-                Incluye cuchara dosificadora",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Incluye cuchara dosificadora"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -264,8 +264,8 @@ Producto.create(
                 Procesador 2.3GHz, 1.6GHz 
                 Memoria interna 32GB 
                 RAM 4 GB 
-                Bateria 3600 mAh",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Bateria 3600 mAh"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
@@ -278,8 +278,8 @@ Producto.create(
                 Smart TV 
                 HDMI: 3 
                 USB: 2 
-                Sí TDT",
-                imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
+                Sí TDT"#,
+                #imagen: "default/44_supermarket_cart_shopping_item_add_product-512.png"
             }
     )
     
