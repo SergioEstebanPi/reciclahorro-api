@@ -7,7 +7,7 @@ class CreateOfertas < ActiveRecord::Migration[5.1]
       t.references :producto, foreign_key: true
       t.string :titulo
       t.text :descripcion
-      t.text :imagen
+      t.attachment :imagen
       t.date :fecha_inicio
       t.date :fecha_fin
       t.numeric :estado

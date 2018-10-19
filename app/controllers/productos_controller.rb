@@ -34,7 +34,7 @@ class ProductosController < ApplicationController
       #puts producto_params[:dataimagen]
       # puts @producto.nombre
       # puts @producto.descripcion
-      puts producto_params
+      #puts producto_params
       @producto.imagen = params[:imagen]
       if @producto.save
         # puts '////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////'

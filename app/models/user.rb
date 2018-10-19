@@ -20,6 +20,10 @@ class User < ApplicationRecord
 
     has_many :vecino_entrega, :class_name => 'Entrega', :foreign_key => 'vecino_id'
     has_many :recolector_entrega, :class_name => 'Entrega', :foreign_key => 'recolector_id'
+    # paperclip
+    has_attached_file :imagen, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+    validates_attachment :imagen, presence: true
+    do_not_validate_attachment_file_type :imagen  
     
     private
         # se encarga de que el email solo tenga letras minúsculas
